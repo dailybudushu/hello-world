@@ -39,73 +39,29 @@
 
 这里用了最小二乘法,损失函数为
 
-$$
-J(\theta)=\frac{1}{2\times{n}}\sum_{i=1}^{n}(h(x^i)-y^i)^2
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;J(\theta)=\frac{1}{2\times{n}}\sum_{i=1}^{n}(h(x^i)-y^i)^2&space;$$" title="$$ J(\theta)=\frac{1}{2\times{n}}\sum_{i=1}^{n}(h(x^i)-y^i)^2 $$" />
 
 可以在后面加上正则惩罚项L2范式
-$$
-J(\theta)=\frac{1}{2\times{n}}\sum_{i=1}^{n}(h(x^i)-y^i)^2+\frac{\lambda}{2n}\sum_n|w|^2
-$$
+
+<img src="https://latex.codecogs.com/gif.latex?$$&space;J(\theta)=\frac{1}{2\times{n}}\sum_{i=1}^{n}(h(x^i)-y^i)^2&plus;\frac{\lambda}{2n}\sum_n|w|^2&space;$$" title="$$ J(\theta)=\frac{1}{2\times{n}}\sum_{i=1}^{n}(h(x^i)-y^i)^2+\frac{\lambda}{2n}\sum_n|w|^2 $$" />
 
 #### 三.小批量梯度下降
 
-$$
-X=\left[
- \begin{matrix}
-   x_1^1 & x_2^1 & ... & x_m^1 \\
-   x_1^2 & x_2^2 & ... & x_m^2\\
-   | & | & ...& |\\
-   x_1^n & x_2^n & ...& x_m^n 
-  \end{matrix}
-  \right]
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;X=\left[&space;\begin{matrix}&space;x_1^1&space;&&space;x_2^1&space;&&space;...&space;&&space;x_m^1&space;\\&space;x_1^2&space;&&space;x_2^2&space;&&space;...&space;&&space;x_m^2\\&space;|&space;&&space;|&space;&&space;...&&space;|\\&space;x_1^n&space;&&space;x_2^n&space;&&space;...&&space;x_m^n&space;\end{matrix}&space;\right]&space;$$" title="$$ X=\left[ \begin{matrix} x_1^1 & x_2^1 & ... & x_m^1 \\ x_1^2 & x_2^2 & ... & x_m^2\\ | & | & ...& |\\ x_1^n & x_2^n & ...& x_m^n \end{matrix} \right] $$" />
 
-$$
-W= \left[
- \begin{matrix}
-   w_1 \\
-   w_2 \\
-   | \\
-   w_m
-  \end{matrix}
-  \right]
-$$
-$$
-y= \left[
- \begin{matrix}
-   y^1\\
-   y^2\\
-   | \\
-   y^n
-  \end{matrix}
-  \right]
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;W=&space;\left[&space;\begin{matrix}&space;w_1&space;\\&space;w_2&space;\\&space;|&space;\\&space;w_m&space;\end{matrix}&space;\right]&space;$$" title="$$ W= \left[ \begin{matrix} w_1 \\ w_2 \\ | \\ w_m \end{matrix} \right] $$" />
 
-$$
-E= \left[
- \begin{matrix}
-   h(x^1)-y^1 \\
-   h(x^2)-y^2\\
-   | \\
-   h(x^n)-y^n
-  \end{matrix}
-  \right]
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;y=&space;\left[&space;\begin{matrix}&space;y^1\\&space;y^2\\&space;|&space;\\&space;y^n&space;\end{matrix}&space;\right]&space;$$" title="$$ y= \left[ \begin{matrix} y^1\\ y^2\\ | \\ y^n \end{matrix} \right] $$" />
+
+<img src="https://latex.codecogs.com/gif.latex?$$&space;E=&space;\left[&space;\begin{matrix}&space;h(x^1)-y^1&space;\\&space;h(x^2)-y^2\\&space;|&space;\\&space;h(x^n)-y^n&space;\end{matrix}&space;\right]&space;$$" title="$$ E= \left[ \begin{matrix} h(x^1)-y^1 \\ h(x^2)-y^2\\ | \\ h(x^n)-y^n \end{matrix} \right] $$" />
 
 其中m为特征个数，n为样本个数
 
-$$
-\frac{\partial{J(\theta)}}{\partial{w}}=\frac{1}{M}\times{X^TE}
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;\frac{\partial{J(\theta)}}{\partial{w}}=\frac{1}{M}\times{X^TE}&space;$$" title="$$ \frac{\partial{J(\theta)}}{\partial{w}}=\frac{1}{M}\times{X^TE} $$" />
 
-$$
-w=w-step\times\frac{1}{n}\times{X^TE}
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;w=w-step\times\frac{1}{n}\times{X^TE}&space;$$" title="$$ w=w-step\times\frac{1}{n}\times{X^TE} $$" />
 
-$$
-b=b-step\times{\frac{1}{n}}\sum_n(h(w^i)-y^i)
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;b=b-step\times{\frac{1}{n}}\sum_n(h(w^i)-y^i)&space;$$" title="$$ b=b-step\times{\frac{1}{n}}\sum_n(h(w^i)-y^i) $$" />
 
 ### 四.scikit-learn实现
 
