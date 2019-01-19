@@ -1,7 +1,3 @@
-<script type="text/javascript" async
-src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js? 
-config=TeX-MML-AM_CHTML"
-</script>
 # linear regression
 
 
@@ -35,9 +31,7 @@ config=TeX-MML-AM_CHTML"
 
 每个数据由11个特征以及一个quality。因此我将模型定为
 
-$$
-\hat{y}=x_{n*11}\times{W_{11*1}}+b
-$$
+<img src="https://latex.codecogs.com/gif.latex?$$&space;\hat{y}=x_{n*11}\times{W_{11*1}}&plus;b&space;$$" title="$$ \hat{y}=x_{n*11}\times{W_{11*1}}+b $$" />
 
 其中n为样本个数
 
