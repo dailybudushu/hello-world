@@ -30,9 +30,11 @@
 #### 模型
 
 每个数据由11个特征以及一个quality。因此我将模型定为
+
 $$
 \hat{y}=x_{n*11}\times{W_{11*1}}+b
 $$
+
 其中n为样本个数
 
 #### 损失函数
@@ -60,6 +62,7 @@ X=\left[
   \end{matrix}
   \right]
 $$
+
 $$
 W= \left[
  \begin{matrix}
@@ -80,6 +83,7 @@ y= \left[
   \end{matrix}
   \right]
 $$
+
 $$
 E= \left[
  \begin{matrix}
@@ -90,13 +94,17 @@ E= \left[
   \end{matrix}
   \right]
 $$
+
 其中m为特征个数，n为样本个数
+
 $$
 \frac{\partial{J(\theta)}}{\partial{w}}=\frac{1}{M}\times{X^TE}
 $$
+
 $$
 w=w-step\times\frac{1}{n}\times{X^TE}
 $$
+
 $$
 b=b-step\times{\frac{1}{n}}\sum_n(h(w^i)-y^i)
 $$
