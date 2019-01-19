@@ -1,5 +1,8 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 # linear regression
-
+$$
+\hat{y}=x_{n*11}\times{W_{11*1}}+b
+$$
 
 ## 摘要
 
